@@ -37,7 +37,7 @@ public class SuperArray {
     R   N/A
     */
     public void add(int index, Integer val){
-        if(Arr[index] == null){
+        if(Arr[index] == null){//Check if the index given is already occupied
             Arr[index] = val;
         }
         else{
@@ -52,12 +52,12 @@ public class SuperArray {
     R   N/A
     */
     public void grow(int n){
-        Integer[] ArrTemp = new Integer[this.Arr.length + n];
+        Integer[] ArrTemp = new Integer[this.Arr.length + n];//Create new Array with the previous length added to growth length
 
-        for (int i = 0; i < this.Arr.length; i++){
+        for (int i = 0; i < this.Arr.length; i++){//Fill the new Array with the previous elements
             ArrTemp[i] = this.Arr[i];
         }
-        this.Arr = ArrTemp;
+        this.Arr = ArrTemp;//Copy
     }
     
     /*
@@ -90,15 +90,17 @@ public class SuperArray {
     I   Integer index
     R   N/A
     */
-    public void remove(int index){
-        Integer[] ArrTemp = new Integer[this.Arr.length];
+    public void remove(Integer index){
+        int j = 0;
+        Integer[] ArrTemp = new Integer[this.Arr.length];//Create copy of Array
         for(int e = 0; e < this.Arr.length; e++){
-            if(this.Arr[e] != index){
-                ArrTemp[e] = this.Arr[e];
+            if(e != index){//If current iteration does not equal to removed index then replace temporary Array index with Array index
+                ArrTemp[j] = this.Arr[e];
+                j++;
             }
         }
-        ArrTemp[this.Arr.length-1] = null;
-        this.Arr = ArrTemp;
+        ArrTemp[this.Arr.length-1] = null;//Makes last index null to shift down
+        this.Arr = ArrTemp;//copy
     }
 
     /*
