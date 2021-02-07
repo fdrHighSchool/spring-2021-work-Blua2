@@ -6,9 +6,13 @@ public class DriverArray {
         Array1.Length(15);
         Array1.LengthDef();
         Array1.add(0, 12);
-        Array1.add(1, 15);
-        Array1.add(2, 4);
-        Array1.add(3, 9);
+        Array1.add(1,7);
+        Array1.toString();
+        Array1.set(1, 14);
+        Array1.toString();
+        Array1.grow(5);
+        Array1.toString();
+        Array1.add(17);
         Array1.toString();
     }
 }
