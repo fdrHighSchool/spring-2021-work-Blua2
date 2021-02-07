@@ -18,12 +18,13 @@ public class SuperArray {
     I   Integer val(value) that represents the value that the user will want the Array to append.
     R   N/A
     */
-    public void add(int val){
-       for(int e = 0; e <= this.Arr.length; e++){//Iterates through the Array and checks if a element is empty. If it is then add that array, if not then the Array is full.
-            if(Arr[e] != 0){
+    public void add(Integer val){
+       for(int e = 0; e < this.Arr.length; e++){//Iterates through the Array and checks if a element is empty. If it is then add that array, if not then the Array is full.
+            if(Arr[e] == null){
                 Arr[e] = val;
+                break;
             }
-            else{
+            else if(e <= this.Arr.length){
                 System.out.println("Error: Array is full");
             }
        }
@@ -35,8 +36,8 @@ public class SuperArray {
     I   Integers index and val(value)
     R   N/A
     */
-    public void add(int index, int val){
-        if(Arr[index] != 0){
+    public void add(int index, Integer val){
+        if(Arr[index] == null){
             Arr[index] = val;
         }
         else{
@@ -65,7 +66,7 @@ public class SuperArray {
     I   Integer i(index) and val(value)
     R   N/A
     */
-    public void set(int i, int val){
+    public void set(int i, Integer val){
         this.Arr[i] = val;
     }
 
@@ -108,6 +109,7 @@ public class SuperArray {
     */
     public String toString(){
         this.str = Arrays.toString(Arr);
+        System.out.println(str);
         return str;
     }
 }
