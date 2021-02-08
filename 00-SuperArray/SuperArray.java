@@ -3,13 +3,11 @@ public class SuperArray {
     private Integer[] Arr;
     private String str;
 
-    public SuperArray(Integer Length){//Constructor 
-        if(Length != 0 && Length != null){
-            this.Arr = new Integer[Length];
-        }
-        else{
-            this.Arr = new Integer[10];
-        }
+    public Integer[] SuperArr(Integer Length){//Constructors
+       return this.Arr = new Integer[Length];
+    }
+    public Integer[] SuperArr(){
+       return this.Arr = new Integer[10];
     }
 
     /*
@@ -36,7 +34,7 @@ public class SuperArray {
     I   Integers index and val(value)
     R   N/A
     */
-    public void add(int index, Integer val){
+    public void add(Integer index, Integer val){
         if(Arr[index] == null){//Check if the index given is already occupied
             Arr[index] = val;
         }
@@ -51,7 +49,7 @@ public class SuperArray {
     I   Integer n(amount)
     R   N/A
     */
-    public void grow(int n){
+    public void grow(Integer n){
         Integer[] ArrTemp = new Integer[this.Arr.length + n];//Create new Array with the previous length added to growth length
         for (int i = 0; i < this.Arr.length; i++){//Fill the new Array with the previous elements
             ArrTemp[i] = this.Arr[i];
@@ -65,7 +63,7 @@ public class SuperArray {
     I   Integer i(index) and val(value)
     R   N/A
     */
-    public void set(int i, Integer val){
+    public void set(Integer i, Integer val){
         this.Arr[i] = val;
     }
 
