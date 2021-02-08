@@ -2,14 +2,14 @@ import java.util.*;
 public class SuperArray {
     private Integer[] Arr;
     private String str;
-    
-    public void Length(Integer Length){
-        Integer[] Arr = new Integer[Length];
-        this.Arr = Arr;
-    }
 
-    public void LengthDef(){
-       if(this.Arr == null){Length(10);}
+    public SuperArray(Integer Length){//Constructor 
+        if(Length != 0 && Length != null){
+            this.Arr = new Integer[Length];
+        }
+        else{
+            this.Arr = new Integer[10];
+        }
     }
 
     /*
@@ -24,7 +24,7 @@ public class SuperArray {
                 Arr[e] = val;
                 break;
             }
-            else if(e <= this.Arr.length){
+            else if(e == this.Arr.length && Arr[e] != null){
                 System.out.println("Error: Array is full");
             }
        }
@@ -53,7 +53,6 @@ public class SuperArray {
     */
     public void grow(int n){
         Integer[] ArrTemp = new Integer[this.Arr.length + n];//Create new Array with the previous length added to growth length
-
         for (int i = 0; i < this.Arr.length; i++){//Fill the new Array with the previous elements
             ArrTemp[i] = this.Arr[i];
         }
