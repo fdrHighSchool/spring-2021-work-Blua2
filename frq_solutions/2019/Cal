@@ -1,0 +1,18 @@
+public class Cal {
+    public static int numberOfLeapYears(int year1, int year2){
+        int leapYears = 0;
+        for(int y = year1; y < year2; y++){
+            if(isLeapYear(y)){
+                leapYears++;
+            }
+        }
+        return leapYears;
+    }
+
+    public static int dayOfWeek(int month, int day, int year){
+        int startDay = firstDayOfYear(year);
+        int nthDay = dayOfYear(month, day, year);
+        int returnDay = (startDay + nthDay - 1) % 7;
+        return returnDay;
+    }
+}
