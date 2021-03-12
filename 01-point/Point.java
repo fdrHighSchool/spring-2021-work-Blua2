@@ -1,4 +1,3 @@
-
 public class Point {
     private int x;
     private int y;
@@ -24,7 +23,8 @@ public class Point {
     }
 
     public void setLocation(int x, int y){
-
+        this.x = x;
+        this.y = y;
     }
 
     public String toString(){
@@ -35,18 +35,51 @@ public class Point {
         setLocation(x + dx, y + dy);
     }
 
-    public void Distance(Object Point1, Object Point2){
+    public double Distance(Point Point1, Point Point2){
+        double distance;
 
+        double x1 = Point1.x; double y1 = Point1.y;
+        double x2 = Point2.x; double y2 = Point2.y;
+
+        distance = Math.sqrt(Math.pow(x1 - y1, 2) + Math.pow(x2 - y2, 2));
+
+        return distance;
     }
 
-    public void midPoint(Object Point1, Object Point2){
+    public static Point midPoint(Point Point1, Point Point2){
+        int x1 = Point1.x; int y1 = Point1.y;
+        int x2 = Point2.x; int y2 = Point2.y;
+        int xm; int ym;
 
+        xm = (x1 + x2)/2;
+        ym = (y1 + y2)/2;
+
+        Point midPoint = new Point(xm,ym);
+
+        return midPoint;
     }
 
-    public void slope(Object Point1, Object Point2){
+    public static double slope(Point Point1, Point Point2){
+        double slope;
+        
+        int x1 = Point1.x; int y1 = Point1.y;
+        int x2 = Point2.x; int y2 = Point2.y;
 
+        slope = (y2 - y1)/(x2 - x1);
+
+        return slope;
     }
-    public void isCollinear(Object Point1, Object Point2){
 
+    public static Boolean isCollinear(Point Point1, Point Point2, Point Point3){
+        Boolean isCollinear = false;
+
+        int x1 = Point1.x; int y1 = Point1.y; int x3 = Point3.x;
+        int x2 = Point2.x; int y2 = Point2.y; int y3 = Point3.y;
+
+        if((y2 - y1)/(x2 - x1) == (y3 - y2)/(x3 - x2)){
+            isCollinear = true;
+        }
+
+        return isCollinear;
     }
 }
