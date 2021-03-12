@@ -41,12 +41,12 @@ public class Point {
         double x1 = Point1.x; double y1 = Point1.y;
         double x2 = Point2.x; double y2 = Point2.y;
 
-        distance = Math.sqrt(Math.pow(x1 - y1, 2) + Math.pow(x2 - y2, 2));
+        distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
         return distance;
     }
 
-    public static Point midPoint(Point Point1, Point Point2){
+    public Point midPoint(Point Point1, Point Point2){
         int x1 = Point1.x; int y1 = Point1.y;
         int x2 = Point2.x; int y2 = Point2.y;
         int xm; int ym;
@@ -59,18 +59,19 @@ public class Point {
         return midPoint;
     }
 
-    public static double slope(Point Point1, Point Point2){
+    public double slope(Point Point1, Point Point2){
         double slope;
         
         int x1 = Point1.x; int y1 = Point1.y;
         int x2 = Point2.x; int y2 = Point2.y;
+        double xm = x2 - x1; double ym = y2 - y1;
 
-        slope = (y2 - y1)/(x2 - x1);
+        slope = ym/xm;
 
         return slope;
     }
 
-    public static Boolean isCollinear(Point Point1, Point Point2, Point Point3){
+    public Boolean isCollinear(Point Point1, Point Point2, Point Point3){
         Boolean isCollinear = false;
 
         int x1 = Point1.x; int y1 = Point1.y; int x3 = Point3.x;
