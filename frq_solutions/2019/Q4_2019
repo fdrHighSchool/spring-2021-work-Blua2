@@ -1,4 +1,4 @@
-public class Cal {
+public class Q4_2019 {
     public static int numberOfLeapYears(int year1, int year2){
         int leapYears = 0;
         for(int y = year1; y < year2; y++){
