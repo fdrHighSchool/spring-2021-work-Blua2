@@ -1,0 +1,17 @@
+PShape square;
+
+void setup() {
+  size(100, 100, P3D);
+  translate(58, 48, 0); 
+  rotateY(0.5);
+  noFill();
+  box(40, 20, 50);
+}
+
+void draw() {
+  float rot = PI;
+  for(int i = 0; i < 100; i++){
+     rotateY(rot / i);
+     box(40, 20, 50);
+  }
+}
